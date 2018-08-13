@@ -1,0 +1,8 @@
+language: go
+go:
+  - "1.10"
+
+script:
+  - go get github.com/gorilla/mux
+  - go get github.com/holys/initials-avatar
+  - go build main.go webServer.go
