@@ -1,0 +1,7 @@
+{
+  "name": "Avatar API",
+  "description": "This is a API server, thats generate random avatars.",
+  "repository": "https://github.com/magiccoder-git/Avatar-API",
+  "logo": "https://avatar-api.herokuapp.com/avatar?name=Ava&size=150",
+  "keywords": ["avatar", "api", "go"]
+}
