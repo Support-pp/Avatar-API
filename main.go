@@ -15,5 +15,5 @@ func main()  {
 	}
 
 	log.Println("App Mode: " + cfg.Section("").Key("app_mode").String())
-	StartWebserver(cfg.Section("server").Key("http_port").MustInt(9999))
+	StartWebserver(cfg.Section("server").Key("http_port").MustInt(80))
 }
