@@ -1,1 +1,1 @@
-'web: avatarAPI' 
+web: avatarAPI
