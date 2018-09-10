@@ -15,5 +15,9 @@ func main()  {
 	}
 
 	log.Println("App Mode: " + cfg.Section("").Key("app_mode").String())
-	StartWebserver(cfg.Section("server").Key("http_port").MustInt(80))
+	port := os.Getenv("PORT");
+	if (port == ""){
+		port = "9090";
+	}
+	StartWebserver(port)
 }

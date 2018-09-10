@@ -9,11 +9,11 @@ import (
 	"github.com/holys/initials-avatar"
 )
 
-func StartWebserver(port int) {
+func StartWebserver(port string) {
 	log.Printf("Start webserver on port ::  %[1]d\n", port);
 	router := mux.NewRouter()
 	router.HandleFunc("/avatar", Index)
-	log.Fatal(http.ListenAndServe(":" + strconv.Itoa(port), router))
+	log.Fatal(http.ListenAndServe(":" + port, router))
 }
 
 func Index(w http.ResponseWriter, r *http.Request) {
