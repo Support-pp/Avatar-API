@@ -49,7 +49,7 @@
   </li>
   <li>Now you can start a curl request
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET \
-  'http://127.0.0.1:9999/avatar?name=g&amp;size=128' \
+  'https://avatar-api.herokuapp.com/avatar?name=g&amp;size=128' \
   -H 'cache-control: no-cache' 
 </code></pre></div>    </div>
     <p>The API is responsed with the Avatar from the inital.</p>
@@ -83,7 +83,7 @@
                 document.getElementById("Aimage").src = "";
                 return;
             }
-            document.getElementById("Aimage").src = "http://18.185.237.99:9999/avatar?name="+inputBox.value+"&size=150"
+            document.getElementById("Aimage").src = "https://avatar-api.herokuapp.com/avatar?name="+inputBox.value+"&size=150"
         }
     </script>
   </body>
