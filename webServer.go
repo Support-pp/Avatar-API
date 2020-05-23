@@ -5,12 +5,11 @@ import (
 	"net/http"
 	"github.com/gorilla/mux"
 	"strconv"
-	"fmt"
 	"github.com/holys/initials-avatar"
 )
 
 func StartWebserver(port string) {
-	log.Printf("Start webserver on port ::  %[1]d\n", port);
+	log.Printf("Start webserver on port :: ", port);
 	router := mux.NewRouter()
 	router.HandleFunc("/avatar", Index)
 	log.Fatal(http.ListenAndServe(":" + port, router))
@@ -24,9 +23,6 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return;
 	}
-	fmt.Println("error");
-
-
 
 	log.Println("Generate avatar for name :: " + init)
 	if (init ==""){
