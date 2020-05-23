@@ -13,14 +13,14 @@
 <meta property="og:locale" content="en_US" />
 <meta name="description" content="Generate avatars with your initial. This is a micro service api." />
 <meta property="og:description" content="Generate avatars with your initial. This is a micro service api." />
-<link rel="canonical" href="http://avatar-api.magiccoder.de/" />
-<meta property="og:url" content="http://avatar-api.magiccoder.de/" />
+<link rel="canonical" href="https://support-pp.github.io/Avatar-API/" />
+<meta property="og:url" content="https://support-pp.github.io/Avatar-API/" />
 <meta property="og:site_name" content="Avatar-API" />
 <script type="application/ld+json">
-{"name":"Avatar-API","description":"Generate avatars with your initial. This is a micro service api.","@type":"WebSite","url":"http://avatar-api.magiccoder.de/","headline":"Avatar-API","@context":"http://schema.org"}</script>
+{"name":"Avatar-API","description":"Generate avatars with your initial. This is a micro service api.","@type":"WebSite","url":"https://support-pp.github.io/Avatar-API/","headline":"Avatar-API","@context":"http://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
-    <link rel="stylesheet" href="http://avatar-api.magiccoder.de/assets/css/style.css?v=fdcf5197d7f50381235783f3198814bcba7daf0b">
+    <link rel="stylesheet" href="https://support-pp.github.io/Avatar-API/assets/css/style.css?v=fdcf5197d7f50381235783f3198814bcba7daf0b">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 </head>
@@ -40,16 +40,16 @@
 <h1 id="doku">Doku</h1>
 <h2 id="getting-started">Getting started</h2>
 <ol>
-  <li>Download the src code <code class="highlighter-rouge">git clone </code>https://github.com/magiccoder-git/Avatar-API`</li>
+  <li>Download the src code <code class="highlighter-rouge">git clone </code>https://github.com/Support-pp/Avatar-API`</li>
   <li>Go in the folder <code class="highlighter-rouge">cd Avatar-Api</code></li>
   <li>Install libs <code class="highlighter-rouge">go get github.com/holys/initials-avatar</code> and <code class="highlighter-rouge">go get github.com/gorilla/mux</code></li>
   <li>Build the micro service with <code class="highlighter-rouge">go build main.go webServer.go</code></li>
   <li>
-    <p>Start the microservice ``./main`</p>
+    <p>Start the microservice `./main`</p>
   </li>
   <li>Now you can start a curl request
     <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X GET \
-  'https://avatar-api.herokuapp.com/avatar?name=g&amp;size=128' \
+  'https://avatar.support-pp.de/avatar?name=g&amp;size=128' \
   -H 'cache-control: no-cache' 
 </code></pre></div>    </div>
     <p>The API is responsed with the Avatar from the inital.</p>
@@ -80,7 +80,7 @@
                 document.getElementById("Aimage").src = "";
                 return;
             }
-            document.getElementById("Aimage").src = "https://avatar-api.herokuapp.com/avatar?name="+inputBox.value+"&size=150"
+            document.getElementById("Aimage").src = "https://avatar.support-pp.de/avatar?name="+inputBox.value+"&size=150"
         }
     </script>
   </body>
