@@ -15,16 +15,19 @@ Generate avatars with your initial. This is a micro service api.
 6. Now you can start a curl request
 ``` 
 curl -X GET \
-  'http://127.0.0.1:9999/avatar?name=g&size=128' \
+  'http://127.0.0.1:9090/avatar?name=g&size=128' \
   -H 'cache-control: no-cache' 
 ```
 The API is responsed with the Avatar from the inital.
 
+
+You can use the docker image `docker pull supportpp/avatar-api
+`
 ## Screenshorts
 
-![Alt text](https://i.gyazo.com/7e4c025762c89fc59f5b88fa88854fbc.png "G")
-![Alt text](https://i.gyazo.com/ad3193d15b452a429ca4262f302dc7f9.png "M")
-![Alt text](https://i.gyazo.com/a0af1e40a5e799060c6343ef4d7864e4.png "V")
+![Alt text](/example_images/g.png "G")
+![Alt text](/example_images/m.png "M")
+![Alt text](/example_images/v.png "V")
 
 
 
