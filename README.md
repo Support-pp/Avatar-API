@@ -1,16 +1,13 @@
 # Avatar-API
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/magiccoder-git/Avatar-API)
-
-
 Generate avatars with your initial. This is a micro service api.
 
 # Doku
 ## Getting started
-1. Download the src code `git clone `https://github.com/magiccoder-git/Avatar-API`
+1. Download the src code `git clone `https://github.com/Support-pp/Avatar-API`
 2. Go in the folder `cd Avatar-Api`
 3. Install libs `go get github.com/holys/initials-avatar` and `go get github.com/gorilla/mux`
 4. Build the micro service with `go build main.go webServer.go`
-5. Start the microservice ``./main`
+5. Start the microservice `./main`
 
 6. Now you can start a curl request
 ``` 
