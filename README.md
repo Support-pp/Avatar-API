@@ -29,4 +29,4 @@ The API is responsed with the Avatar from the inital.
 
 
 # Legal
-This is a small micro service from the magiccoder organisation. We use the same for our project, to generate your avatar. This micro service is Open Source. And you can use that without any copyright.
+This is a small micro service from the magiccoder organisation. We use the same for our project, to generate your avatar. This micro service is open source. And you can use that without any copyright.
