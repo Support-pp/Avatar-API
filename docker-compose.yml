@@ -8,8 +8,6 @@ services:
     volumes:
       - ./api/:/api
     working_dir: /api
-    expose:
-      - 9080
     ports:
       - '9080:9080'
     hostname: api
