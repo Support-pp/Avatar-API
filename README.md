@@ -26,9 +26,9 @@ You can use the docker image `docker pull supportpp/avatar-api`
 
 ## Screenshorts
 
-![Alt text](/example_images/g.png "G")
-![Alt text](/example_images/m.png "M")
-![Alt text](/example_images/v.png "V")
+![Alt text](/example_images/g.png 'G')
+![Alt text](/example_images/m.png 'M')
+![Alt text](/example_images/v.png 'V')
 
 # Legal
 
