@@ -1,29 +1,24 @@
 {
-  "name": "node-image-cache-server",
-  "version": "1.0.0",
-  "main": "src/index.js",
-  "license": "MIT",
-  "dependencies": {
-    "redis": "^2.8.0",
-    "sharp": "^0.21.1"
-  },
-  "private": true,
-  "scripts": {
-    "start": "node src/index.js",
-    "nodemon": "nodemon src/index.js",
-    "npm::rebuild": "npm rebuild",
-    "docker::start": "npm install && npm run nodemon"
-  },
-  "devDependencies": {
-    "nodemon": "^1.18.9"
-  },
-  "author": "Felix Fong <felix@felixfong227.ml> (https://felixfong227.ml)",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/felixfong227/node-image-cache-server"
-  },
-  "homepage": "https://github.com/felixfong227/node-image-cache-server",
-  "bugs": {
-    "url": "https://github.com/felixfong227/node-image-cache-server/issues"
-  }
+	"name": "node-image-cache-server",
+	"version": "1.0.0",
+	"main": "src/index.js",
+	"license": "MIT",
+	"dependencies": {
+		"@types/express": "^4.17.7",
+		"@types/node": "^14.0.27",
+		"express": "^4.17.1",
+		"redis": "^2.8.0",
+		"sharp": "^0.21.1",
+		"tslib": "^2.0.1",
+		"typescript": "^3.9.7"
+	},
+	"scripts": {
+		"start": "nodemon build/index.js",
+		"build": "tsc",
+		"npm::rebuild": "npm rebuild",
+		"docker::start": "npm install && npm install typescript -g && npm run build && npm run start"
+	},
+	"devDependencies": {
+		"nodemon": "^1.18.9"
+	}
 }

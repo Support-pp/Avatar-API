@@ -1,4 +1,3 @@
-import * as http from 'http';
 const sharp = require('sharp');
 const redis = require('redis');
 import express from 'express';
