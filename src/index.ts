@@ -17,7 +17,7 @@ app.get('/', function (req: any, res: any) {
 		size = req.query.size;
 	} else {
 		res.statusCode = 500;
-		return res.end('Error the size must be between 1 and 2000');
+		return res.end('Error the size must be between 1 and 1000');
 	}
 	const name = req.query.name ? req.query.name : 'xxxx';
 	const imageUrlPath = `http://api:9080/avatar?name=${name}&size=${size}`;

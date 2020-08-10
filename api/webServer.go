@@ -24,6 +24,9 @@ func Index(w http.ResponseWriter, r *http.Request) {
 		w.WriteHeader(http.StatusBadRequest)
 		return;
 	}
+	if (size > 1000){
+		size = 1000
+	}
 
 	if (strconv.Itoa(size) == "" ){
 		w.WriteHeader(http.StatusBadRequest)
@@ -38,11 +41,9 @@ func Index(w http.ResponseWriter, r *http.Request) {
 
 	a := avatar.NewWithConfig(avatar.Config{
 		FontFile: "./ONEDAY.ttf",
-		FontSize: float64(200) * 75.0 / 128.0,
-		MaxItems: 1024,
+		FontSize: float64(size) * 75.0 / 128.0,
 		MaxBytes: 128,
 	})
-	log.Printf(">> ERROR - 2")
 
 	b, err := a.DrawToBytes(init, size)
 	if (err != nil){
