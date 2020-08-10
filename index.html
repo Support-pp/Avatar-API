@@ -5,13 +5,12 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-		<!-- Begin Jekyll SEO tag v2.5.0 -->
 		<title>
-			Avatar-API | Generate avatars with your initial. This is a micro service
-			api.
+			Avatar-API | Generate avatars with your initial.
 		</title>
 		<meta name="generator" content="Jekyll v3.7.3" />
 		<meta property="og:title" content="Avatar-API" />
+		<meta property="og:description" content="Avatar-API" />
 		<meta property="og:locale" content="en_US" />
 		<meta
 			name="description"
@@ -19,7 +18,8 @@
 		/>
 		<meta
 			property="og:description"
-			content="Generate avatars with your initial. This is a micro service api."
+			content="You can generate avatars based on their initial. This project use redis as cache.
+			The implementation can be used e.g. in web applications for default avatar creation."
 		/>
 		<link rel="canonical" href="https://support-pp.github.io/Avatar-API/" />
 		<meta
@@ -30,7 +30,8 @@
 		<script type="application/ld+json">
 			{
 				"name": "Avatar-API",
-				"description": "Generate avatars with your initial. This is a micro service api.",
+				"description": "You can generate avatars based on their initial. This project use redis as cache.
+				The implementation can be used e.g. in web applications for default avatar creation.",
 				"@type": "WebSite",
 				"url": "https://support-pp.github.io/Avatar-API/",
 				"headline": "Avatar-API",
@@ -54,16 +55,21 @@
 	<body>
 		<div class="container-lg px-3 my-5 markdown-body">
 			<h1 id="avatar-api">Avatar-API</h1>
-			<p>Generate avatars with your initial. This is a micro service api.</p>
+			<p>
+				You can generate avatars based on their initial. This project use redis
+				as cache. The implementation can be used e.g. in web applications for
+				default avatar creation.
+			</p>
 
 			<h1 id="demo">Demo</h1>
-			<p>Test the small demo. Whats your Username?</p>
+			<p>Try the avatar generate service.</p>
 			<input
 				id="username-input"
 				class="form-control form-control-lg"
 				type="text"
-				placeholder="magiCCoder"
+				placeholder="klexhub"
 			/>
+			<label>Special characters are not supported. </label>
 			<p><br /></p>
 			<img id="Aimage" src="" />
 			<img id="Aimage2" src="" />
@@ -71,55 +77,47 @@
 			<h2 id="getting-started">Getting started</h2>
 			<ol>
 				<li>
-					Download the src code
-					<code class="highlighter-rouge">git clone </code
-					>https://github.com/Support-pp/Avatar-API`
+					Clone the github repository
+					<a href="https://github.com/Support-pp/Avatar-API">Avatar-API</a> by
+					<code>git clone https://github.com/Support-pp/Avatar-API.git</code>
 				</li>
 				<li>
-					Go in the folder <code class="highlighter-rouge">cd Avatar-Api</code>
+					You can simply start <code>redis</code>, <code>cache server</code> and
+					<code>avatar creator api</code> with the docker-compose command:
+					<br />
+					<code>docker-compose up</code>
 				</li>
+
 				<li>
-					Install libs
-					<code class="highlighter-rouge"
-						>go get github.com/holys/initials-avatar</code
-					>
-					and
-					<code class="highlighter-rouge">go get github.com/gorilla/mux</code>
-				</li>
-				<li>
-					Build the micro service with
-					<code class="highlighter-rouge">go build main.go webServer.go</code>
-				</li>
-				<li>
-					<p>Start the microservice `./main`</p>
-				</li>
-				<li>
-					Now you can start a curl request
+					Service is up and running. Now we can start a curl request
 					<div class="highlighter-rouge">
 						<div class="highlight">
 							<pre class="highlight"><code>curl -X GET \
-  'https://avatar.support-pp.de/avatar?name=g&amp;size=128' \
-  -H 'cache-control: no-cache' 
+  'https://avatar.support-pp.de/?name=g&amp;size=128' 
 </code></pre>
 						</div>
 					</div>
-					<p>The API is responsed with the Avatar from the inital.</p>
+					<p>
+						The api generate now an avatar and responde with this. The first
+						call take a littel bit longer, because ther service generate a new
+						avatar with the initial. The next requests will be loaded from the
+						cache.
+					</p>
 				</li>
 			</ol>
 
 			<h2 id="screenshorts">Screenshorts</h2>
 
 			<p>
-				<img src="/example_images/g.png" alt="Alt text" title="G" />
-				<img src="/example_images/m.png" alt="Alt text" title="M" />
-				<img src="/example_images/v.png" alt="Alt text" title="V" />
+				<img src="./example_images/g.png" width="30%" />
+				<img src="./example_images/m.png" width="30%" />
+				<img src="./example_images/v.png" width="30%" />
 			</p>
 
 			<h1 id="legal">Legal</h1>
 			<p>
-				This is a small micro service from the support-pp organisation. We use
-				the same for our project, to generate your avatar. This micro service is
-				open source. And you can use that without any copyright.
+				<b>The used font is not covered by this license. </b>Please inquire
+				about your rights.
 			</p>
 		</div>
 		<script
@@ -139,9 +137,7 @@
 					return;
 				}
 				document.getElementById('Aimage').src =
-					'https://avatar.support-pp.de/avatar?name=' +
-					inputBox.value +
-					'&size=150';
+					'https://avatar.support-pp.de/?name=' + inputBox.value + '&size=150';
 			};
 		</script>
 	</body>

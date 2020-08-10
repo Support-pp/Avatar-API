@@ -1,35 +1,31 @@
 # Avatar-API
 
-Generate avatars with your initial. This is a micro service api.
-
-# Doku
+You can generate avatars based on their initial. This project use redis as cache.
+The implementation can be used e.g. in web applications for default avatar creation.
 
 ## Getting started
 
-1. Download the src code `git clone https://github.com/Support-pp/Avatar-API`
-2. Go in the folder `cd Avatar-Api`
-3. Install libs `go get github.com/holys/initials-avatar` and `go get github.com/gorilla/mux`
-4. Build the micro service with `go build main.go webServer.go`
-5. Start the microservice `./main`
-
-6. Now you can start a curl request
+1. Clone the github repository [Avatar-API](https://github.com/Support-pp/Avatar-API) by
+   `git clone https://github.com/Support-pp/Avatar-API.git`
+2. You can simply start `redis`, `cache server` and `avatar creator api` with the docker-compose command:
+   `docker-compose up`
+3. Service is up and running. Now we can start a curl request
 
 ```
 curl -X GET \
-  'http://127.0.0.1:9090/avatar?name=g&size=128' \
-  -H 'cache-control: no-cache'
+  'http://127.0.0.1:9090/?name=g&size=128'
 ```
 
-The API is responsed with the Avatar from the inital.
+The api generate now an avatar and responde with this. The first call take a littel bit longer, because ther service generate a new avatar with the initial. The next requests will be loaded from the cache.
 
-You can use the docker image `docker pull supportpp/avatar-api`
+> Note: make sure that your font supports special characters. Our used font support that not!
 
 ## Screenshorts
 
-![Alt text](/example_images/g.png 'G')
-![Alt text](/example_images/m.png 'M')
-![Alt text](/example_images/v.png 'V')
+<img src="./example_images/g.png" width="30%">
+<img src="./example_images/m.png" width="30%">
+<img src="./example_images/v.png" width="30%">
 
 # Legal
 
-This is a small micro service from the magiccoder organisation. We use the same for our project, to generate your avatar. This micro service is open source. And you can use that without any copyright.
+<b>The used font is not covered by this license. </b>Please inquire about your rights.
