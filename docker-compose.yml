@@ -11,6 +11,7 @@ services:
     ports:
       - '9080:9080'
     hostname: api
+    restart: always
     depends_on:
       - redis
     networks:
@@ -26,6 +27,7 @@ services:
     ports:
       - '9090:9090'
     command: npm run docker::start
+    restart: always
     depends_on:
       - redis
     networks:
@@ -35,6 +37,7 @@ services:
     image: redis:4.0.5-alpine
     command: ['redis-server', '--appendonly', 'yes']
     hostname: redis
+    restart: always
     volumes:
       - redis-data:/data
     networks:

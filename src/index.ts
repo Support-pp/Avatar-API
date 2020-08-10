@@ -13,13 +13,17 @@ app.get('/', function (req: any, res: any) {
 		return res.end('Method not allowed');
 	}
 	let size;
-	if (req.query.size <= 2000 && req.query.size >= 1) {
+	if (req.query.size <= 1000 && req.query.size >= 1) {
 		size = req.query.size;
 	} else {
+		size = req.query.size;
 		res.statusCode = 500;
-		return res.end('Error the size must be between 1 and 1000');
+		res.send('Error the size should be between 1 and 1000');
+		return;
 	}
-	const name = req.query.name ? req.query.name : 'xxxx';
+
+	let name = req.query.name ? req.query.name : 'xxxx';
+	name = name.replace(/\s/g, '');
 	const imageUrlPath = `http://api:9080/avatar?name=${name}&size=${size}`;
 
 	// Look for the Redis cache

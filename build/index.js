@@ -13,8 +13,19 @@ app.get('/', function (req, res) {
         res.statusCode = 405;
         return res.end('Method not allowed');
     }
-    const size = req.query.size ? req.query.size : 150;
-    const name = req.query.name ? req.query.name : 'xxxx';
+    let size;
+    if (req.query.size <= 1000 && req.query.size >= 1) {
+        size = req.query.size;
+    }
+    else {
+        console.log('OV');
+        size = req.query.size;
+        res.statusCode = 500;
+        res.send('Error the size should be between 1 and 1000');
+        return;
+    }
+    let name = req.query.name ? req.query.name : 'xxxx';
+    name = name.replace(/\s/g, '');
     const imageUrlPath = `http://api:9080/avatar?name=${name}&size=${size}`;
     client.get(imageUrlPath, (error, data) => {
         if (error) {
