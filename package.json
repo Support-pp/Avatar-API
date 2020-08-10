@@ -19,6 +19,6 @@
 		"docker::start": "npm install && npm install typescript -g && npm run build && npm run start"
 	},
 	"devDependencies": {
-		"nodemon": "^1.19.4"
+		"nodemon": "^2.0.4"
 	}
 }

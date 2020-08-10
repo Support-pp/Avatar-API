@@ -20,6 +20,11 @@ func Index(w http.ResponseWriter, r *http.Request) {
 	init :=  strings.Replace(r.URL.Query().Get("name"), " ", "", -1)
 	size, _ :=  strconv.Atoi(string( r.URL.Query().Get("size")))
 
+	if (size > 32767){
+		w.WriteHeader(http.StatusBadRequest)
+		return;
+	}
+
 	if (strconv.Itoa(size) == "" ){
 		w.WriteHeader(http.StatusBadRequest)
 		return;
@@ -33,11 +38,17 @@ func Index(w http.ResponseWriter, r *http.Request) {
 
 	a := avatar.NewWithConfig(avatar.Config{
 		FontFile: "./ONEDAY.ttf",
-		FontSize: float64(size) * 75.0 / 128.0,
+		FontSize: float64(200) * 75.0 / 128.0,
 		MaxItems: 1024,
+		MaxBytes: 128,
 	})
-	b, _ := a.DrawToBytes(init, size)
+	log.Printf(">> ERROR - 2")
 
+	b, err := a.DrawToBytes(init, size)
+	if (err != nil){
+		log.Printf(">> ERROR")
+	}
+	
 	w.Header().Set("Content-Type", "image/png")
 	w.Header().Set("Cache-Control", "max-age=600")
 	w.WriteHeader(http.StatusOK)

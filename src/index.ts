@@ -12,7 +12,13 @@ app.get('/', function (req: any, res: any) {
 		res.statusCode = 405;
 		return res.end('Method not allowed');
 	}
-	const size = req.query.size ? req.query.size : 150;
+	let size;
+	if (req.query.size <= 2000 && req.query.size >= 1) {
+		size = req.query.size;
+	} else {
+		res.statusCode = 500;
+		return res.end('Error the size must be between 1 and 2000');
+	}
 	const name = req.query.name ? req.query.name : 'xxxx';
 	const imageUrlPath = `http://api:9080/avatar?name=${name}&size=${size}`;
 
